@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+# Run outputs and model checkpoints stay out of git; only official scores go in results/
+runs/
+outputs/
+checkpoints/
+*.safetensors
+*.bin

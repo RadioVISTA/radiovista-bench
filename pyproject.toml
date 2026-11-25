@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radiovista-bench"
+version = "0.1.0.dev0"
+description = "RadioVISTA benchmark: evaluation and training baselines for visual reasoning about invisible radio fields"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+# Evaluation stays light: no ray tracer, renderer or GPU needed.
+dependencies = [
+  "huggingface_hub",
+  "numpy",
+  "pillow",
+]
+
+[project.optional-dependencies]
+# Heavy training stack (SFT and GRPO). Fill in from the training environment on the
+# experiment server before the first release.
+train = []
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["radiovista_bench*"]
